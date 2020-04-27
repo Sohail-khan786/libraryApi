@@ -1,0 +1,84 @@
+pom.xml -->> contains all the list of dependencies
+           dependencies -->> JAR to download
+		   parent -->> version of the JAR files
+
+maven ->> dependencies management tool -->> that download all dependencies in pom.xml 
+      -->> also creates starter project
+	  
+springApplication.run(class_name ,args) --> this should be in main mathod class to define start point
+
+service annotations , controller annototion for different class
+
+@requestMapping(url_string) -->> only for get Requests
+                            -->> method = requestMethod  and value = url
+							-->> post request header setting vvip "content-type : application / json"
+							-->> @pathVariable to catch arguements in url eg: {id}
+
+Resource  -->> database data from which api pulls datas
+
+
+@service -->> create service
+         -->> autoWired for dependency injection from other service/classes
+
+@restController -->> controller
+
+@requestBody --> to catch the data that was sent by post request
+
+controller -->> for api/url requests mappings
+
+service -->>connect to database and  to provide data to controllers
+
+@entity  -->> to show its entity class to JPA
+normal class -->> entity Class -->> to define object of that resource
+             -->> @Id - shows primary key
+
+Optional
+Repository or CrudRepository class -->> to use spring crud operations directly
+
+SPRING CONFIGURATION
+  -->> create "application.properties" file in "main/resource/"   -> in this file you can put application properties for cinfiguration
+       (read spring documentation on application.properties and their key value pair)
+	   eg : server.port-3000
+	   
+ORM --> object(JSON) -- relation(database table) mapping  ->> this is done with help of JPA Framework (java  persistence api) to help you put data into database faster 
+        without having to write everything yourself
+
+Imp dependencies -->> web and JPA  and swagger and swagger UI
+     other dependencies -->> apache-derby for test database
+	                    -->> actuator dependencies -->> to give overview of the spring boot application
+	 
+
+video 28 : public interface tp extends crudRepository<className , primary_key>
+                         --> auto generate all crud methods for that entity
+						 
+Relational Databases
+  @Id - shows primary key
+  @ManyToOne -->> to show a foreign Key
+  
+Packaging and deployment  ->> jar and war files deployment
+
+Sping boot actuator dependency -->> to give overview of the spring boot application
+
+
+--------------------------------------course completed------------------------------------------------------------------------------------------------------
+
+
+Do as many Projects as possible , before lockdown gets over , so that you can directly deep dive in reliance
+        -->> take help of surendra reddy or sarvesh kumar
+		
+		
+***************************************ADDING SWAGGER API DOCUMENTATION**************************************************************
+
+Steps -->Add swagger spring dependency  --> springfox swagger2  && springFoxSwaggerUI
+      -->enable swagger using an annotations --> @enableSwagger2
+	  --> configure swagger
+	  --> extra step --> add details to api using swagger annotations --> @apiOperation(value="description", response = responseObjectDefinition)
+	                                                                  --> @apiParam for parameter Definition
+																	  --> @apiModelProperty
+	  
+on same server access endpoint "v2/api-docs" for getting swagger documentation adn UI using swagger-ui.html
+
+fun Fact .. @RequestMapping("/something")  can be added to a class also , and not just the controllers within
+
+Docket Object --> to add custom swagger documentation
+              --> this docket object should be in apring bean
