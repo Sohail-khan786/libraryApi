@@ -1,0 +1,3 @@
+*******************Project 1************************
+
+Dependencies : web , JPA (for database operation) , lambok(Big annotation library to Reduce code), MySql connector(required DB conector) , foxSwagger and foxSwaggerUI for documentation 

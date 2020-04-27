@@ -16,6 +16,7 @@ service annotations , controller annototion for different class
 
 Resource  -->> database data from which api pulls datas
 
+The below classes should be part of one Package realted to that model/DB:
 
 @service -->> create service
          -->> autoWired for dependency injection from other service/classes
