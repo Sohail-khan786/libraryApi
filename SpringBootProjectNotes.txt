@@ -2,6 +2,7 @@
 
 Dependencies : web , JPA (for database operation) , lambok(Big annotation library to Reduce code), MySql connector(required DB conector) , foxSwagger and foxSwaggerUI for documentation 
 
+Its necessary to write zero arguement constructors and all arguement constructors for all Models
 
 New Good annotations:
 
@@ -28,12 +29,16 @@ Hacks :
 IMP 4 Classes for Every model:
 
 controller  class-->> for api/url requests mappings
+                 --> --> has service class instance to use its method
 
 service class-->>connect to database and  to provide data to controllers
+             --> has CrudRepository instance to use its method
 
 @entity class -->> to show its entity class to JPA
 normal class -->> entity Class -->> to define object of that resource
              -->> @Id - shows primary key
+             -->> has all properties , getters , setters , zero arguement constructors and all arguement constructors
+             
 
 Repository or CrudRepository Interface -->> to use spring crud operations directly
 

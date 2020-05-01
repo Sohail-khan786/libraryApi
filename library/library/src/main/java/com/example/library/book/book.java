@@ -13,19 +13,30 @@ public class book {
 	private Integer bookId;
 	private String name;
 	private String author;
+	private Integer authorId;
 
 	public book() {
 		// TODO Auto-generated constructor stub
 		this.bookId = 0;
 		this.name = "default";
 		this.author = "default";
+		this.authorId = 0;
 	}
 
-	public book(Integer bookId, String name, String author) {
+	public book(Integer bookId, String name, String author, Integer authorId) {
 		super();
 		this.bookId = bookId;
 		this.name = name;
 		this.author = author;
+		this.authorId = authorId;
+	}
+
+	public Integer getAuthorId() {
+		return authorId;
+	}
+
+	public void setAuthorId(Integer authorId) {
+		this.authorId = authorId;
 	}
 
 	public Integer getBookId() {
