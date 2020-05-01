@@ -1,5 +1,6 @@
 *******************Project 1************************
 
+
 Dependencies : web , JPA (for database operation) , lambok(Big annotation library to Reduce code), MySql connector(required DB conector) , foxSwagger and foxSwaggerUI for documentation 
 
 Its necessary to write zero arguement constructors and all arguement constructors for all Models
@@ -21,8 +22,30 @@ New Good annotations:
 
 @RequestBody ->while sending a post request
 
+***********************Database Relationships using JPA ****************************************
+
+watch relevant youtube tutorials
+
+many to one 
+https://hellokoding.com/jpa-one-to-many-relationship-mapping-example-with-spring-boot-maven-and-mysql/
+
+
+one to one
+https://hellokoding.com/jpa-one-to-one-foreignkey-relationship-example-with-spring-boot-maven-and-mysql/
+
+************************************************************************************************
+
+@OneToOne --> defines a one-to-one relationship between 2 entities.
+
+@JoinColumn --> defines foreign key column and indicates the owner of the relationship.
+
+mappedBy indicates the inverse of the relationship.
+
+unique = true enforces the unique constraint, 1 address belongs to only 1 library.
+
 Hacks :
   Repository Interface Extend JPA repository ->> for every entity class -> so that u dont have to run a single Sql Query
+
 
 
 
