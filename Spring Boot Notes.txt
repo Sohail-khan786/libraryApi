@@ -25,6 +25,10 @@ The below classes should be part of one Package realted to that model/DB:
 
 @requestBody --> to catch the data that was sent by post request
 
+
+
+IMP 4 Classes for Every model:
+
 controller -->> for api/url requests mappings
 
 service -->>connect to database and  to provide data to controllers
@@ -33,8 +37,10 @@ service -->>connect to database and  to provide data to controllers
 normal class -->> entity Class -->> to define object of that resource
              -->> @Id - shows primary key
 
-Optional
-Repository or CrudRepository class -->> to use spring crud operations directly
+Repository or CrudRepository Interface -->> to use spring crud operations directly
+
+
+
 
 SPRING CONFIGURATION
   -->> create "application.properties" file in "main/resource/"   -> in this file you can put application properties for cinfiguration

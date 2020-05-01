@@ -1,3 +1,62 @@
 *******************Project 1************************
 
 Dependencies : web , JPA (for database operation) , lambok(Big annotation library to Reduce code), MySql connector(required DB conector) , foxSwagger and foxSwaggerUI for documentation 
+
+
+New Good annotations:
+
+@Entity -> to show that , the class objects map to  a table
+@getter
+@setter 
+@table(name="table_name")
+@noArguementConstructor
+@allArguementConstructor 
+@toString
+
+@id -> to define Privat Key 
+@generateValue -> to automatic generate primary key
+
+@transactional -> to define all sql actions are transactional and follow ACID properties
+
+@RequestBody ->while sending a post request
+
+Hacks :
+  Repository Interface Extend JPA repository ->> for every entity class -> so that u dont have to run a single Sql Query
+
+
+
+IMP 4 Classes for Every model:
+
+controller  class-->> for api/url requests mappings
+
+service class-->>connect to database and  to provide data to controllers
+
+@entity class -->> to show its entity class to JPA
+normal class -->> entity Class -->> to define object of that resource
+             -->> @Id - shows primary key
+
+Repository or CrudRepository Interface -->> to use spring crud operations directly
+
+
+
+
+
+Standard Controller method Examples and Request types 
+
+   @GetMapping("/getAllBooks")
+	public List<book> getAllBooks() {
+		
+		return bookDataService.getAllBooks();
+		
+	}
+	
+	@PostMapping("/addBook")
+	public void addBook(@RequestBody book b){
+		bookDataService.saveBook(b);
+	}
+	
+	@PostMapping("/deleteBook/{id}")
+	public void removeBook(@PathVariable Integer id){
+		bookDataService.saveBook(b);
+	}
+
