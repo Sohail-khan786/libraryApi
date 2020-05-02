@@ -1,6 +1,7 @@
 package com.example.library.book;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,7 +24,7 @@ public class book {
 	private String name;
 	private String price;
 
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = false , fetch = FetchType.LAZY)
 	@JoinColumn(name = "author_id")
 	private Author author;
 
