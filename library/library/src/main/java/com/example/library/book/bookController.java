@@ -44,5 +44,13 @@ public class bookController {
 	public String deleteBook(@PathVariable Integer id) {
 		return bookDataService.deleteBook(id);
 	}
+	
+	
+	@GetMapping("/getAllBooksByAuthorId/{id}")
+	public List<book> getBookByAuthor(@PathVariable Integer id) {
+
+		return bookDataService.getBooksByAuthor(id);
+
+	}
 
 }

@@ -46,6 +46,12 @@ notes  : https://www.youtube.com/watch?v=8qhaDBCJh6I
        -->@onDelete(action = onDeleteAction.Cascade)
 
 
+After lot of struggling in bi-directional mapping , it was getting hard for me , so choose this for reference for uni-directional mapping:
+http://websystique.com/hibernate/hibernate-many-to-one-unidirectional-annotation-example/
+
+//why isn't fetchType=lazy not working
+
+
 
 ************************************************************************************************
 
