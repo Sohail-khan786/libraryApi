@@ -4,6 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.example.library.authors.Author;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -17,8 +21,11 @@ public class book {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer bookId;
 	private String name;
-	private String author;
-	private Integer authorId;
+	private String price;
+
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "author_id")
+	private Author author;
 
 	public Integer getBookId() {
 		return bookId;
@@ -36,20 +43,23 @@ public class book {
 		this.name = name;
 	}
 
-	public String getAuthor() {
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public Author getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(Author author) {
 		this.author = author;
 	}
-
-	public Integer getAuthorId() {
-		return authorId;
-	}
-
-	public void setAuthorId(Integer authorId) {
-		this.authorId = authorId;
-	}
+    
+	
+	
 
 }

@@ -1,5 +1,6 @@
 package com.example.library.authors;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,11 +16,14 @@ public class Author {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "author_id")
 	private Integer authorId;
 
 	private String name;
 	private String city;
 	private String country;
+	
+	
 
 	public Integer getAuthorId() {
 		return authorId;
