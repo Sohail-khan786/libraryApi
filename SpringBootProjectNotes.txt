@@ -11,6 +11,7 @@ New Good annotations:
 @getter
 @setter 
 @table(name="table_name")
+@data                         -> create getter and setter dynamically
 @noArguementConstructor       -> lambok 
 @allArguementConstructor      -> lombok
 @toString
