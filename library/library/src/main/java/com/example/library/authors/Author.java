@@ -21,21 +21,6 @@ public class Author {
 	private String city;
 	private String country;
 
-	public Author() {
-		this.authorId = 0;
-		this.name = "default";
-		this.country = "default";
-		this.country = "default";
-	}
-
-	public Author(Integer authorId, String name, String city, String country) {
-		super();
-		this.authorId = authorId;
-		this.name = name;
-		this.city = city;
-		this.country = country;
-	}
-
 	public Integer getAuthorId() {
 		return authorId;
 	}
