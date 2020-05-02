@@ -11,9 +11,11 @@ New Good annotations:
 @getter
 @setter 
 @table(name="table_name")
-@noArguementConstructor
-@allArguementConstructor 
+@noArguementConstructor       -> lambok 
+@allArguementConstructor      -> lombok
 @toString
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_DEFAULT)
 
 @id -> to define Privat Key 
 @generateValue -> to automatic generate primary key
@@ -29,9 +31,20 @@ watch relevant youtube tutorials
 many to one 
 https://hellokoding.com/jpa-one-to-many-relationship-mapping-example-with-spring-boot-maven-and-mysql/
 
+https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/
+
 
 one to one
 https://hellokoding.com/jpa-one-to-one-foreignkey-relationship-example-with-spring-boot-maven-and-mysql/
+
+
+notes  : https://www.youtube.com/watch?v=8qhaDBCJh6I
+       --> @oneToMany  --> targetEntity and cascadeType
+       -->@Query to write custom query
+       -->@ManyToOne     and       @JoinColumn -> declare foreign key and it automatically captures primary key of the that Entity 
+       -->@onDelete(action = onDeleteAction.Cascade)
+
+
 
 ************************************************************************************************
 
@@ -45,11 +58,12 @@ unique = true enforces the unique constraint, 1 address belongs to only 1 librar
 
 Hacks :
   Repository Interface Extend JPA repository ->> for every entity class -> so that u dont have to run a single Sql Query
+  public class Book implements Serializable > so that ACID properties are observed
 
 
 
 
-IMP 4 Classes for Every model:
+IMP 4 Classes for Every model: enity / model , controller , service , repository
 
 controller  class-->> for api/url requests mappings
                  --> --> has service class instance to use its method
@@ -88,3 +102,35 @@ Standard Controller method Examples and Request types
 		bookDataService.saveBook(b);
 	}
 
+
+*****************application properties config files**************
+
+# DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring.datasource.url=jdbc:mysql://localhost:3306/jpa_one_to_many_demo?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+spring.datasource.username=root
+spring.datasource.password=root
+
+# Hibernate
+
+# The SQL dialect makes Hibernate generate better SQL for the chosen database
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+
+# Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto = update
+
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type=TRACE
+
+
+******************************************************************
+
+
+*****************handy things********************
+
+when u want to create a field and not let it update
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at", nullable = false, updatable = false)
+    @CreatedDate
+    private Date createdAt;
+
+************************************************
