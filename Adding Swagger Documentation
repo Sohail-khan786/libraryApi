@@ -1,5 +1,5 @@
 
-Good Project for understanding swagger tutorials : https://dzone.com/articles/how-to-automatically-document-api-endpoints-via-sw
+Good Project for understanding swagger tutorials : https://dzone.com/articles/spring-boot-2-restful-api-documentation-with-swagg
 
 
 step 1 : Add swagger dependency --> swagger2 -> for Json documentation

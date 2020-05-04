@@ -50,7 +50,7 @@ public class AuthorController {
     
 	@ApiOperation(value = "Delete an Author using author ID ")
 	@PostMapping("/deleteAuthor/{id}")
-	public String removeAuthor(@PathVariable Integer id) {
+	public String removeAuthor( @ApiParam(value = "AuthorId of the Author To be deleted", required = true) @PathVariable Integer id) {
 		return authorDataService.deleteAuthor(id);
 		//return "deleted";
 	}
