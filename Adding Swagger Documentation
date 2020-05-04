@@ -1,3 +1,7 @@
+
+Good Project for understanding swagger tutorials : https://dzone.com/articles/how-to-automatically-document-api-endpoints-via-sw
+
+
 step 1 : Add swagger dependency --> swagger2 -> for Json documentation
                                 --> swagger UI for HTML documentation
 

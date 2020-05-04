@@ -27,14 +27,8 @@ public class LibraryApplication {
 	@Bean
 	public Docket swaggerConfiguration(ServletContext servletContext) {
 		return new Docket(DocumentationType.SWAGGER_2)
-				.pathProvider(new RelativePathProvider(servletContext) {
-                    @Override
-                    public String getApplicationBasePath() {
-                        return "/library";
-                    }
-                })
 				.select()
-				.paths(PathSelectors.ant("/library/*"))
+				.paths(PathSelectors.ant("/api/**"))
 				.apis(RequestHandlerSelectors.basePackage("com.example.library"))
 				.build()
 				.apiInfo(apiDetail());
