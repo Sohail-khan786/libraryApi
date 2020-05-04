@@ -1,0 +1,27 @@
+step 1 : Add swagger dependency --> swagger2 -> for Json documentation
+                                --> swagger UI for HTML documentation
+
+step 2 : enable swagger dependency using annotaion @enableSwagger2 in mian method
+
+step 3 : access swagger page http://localhost:9002/swagger-ui.HTML
+         the port number should be the number of your settings_applications
+
+
+ADVANCED ---------------> configure swagger only for the controllers that u want to 
+
+conept of Spring Bean:
+    -> create a spring bean , of type Docket and swagger will use only that for documentation
+    -> see video step by step , coz its complex 
+
+*************** annotaion for each api information **************************
+
+@apiOperation(value="find all books by ID" , notes = "Just provide ID of the book and u get all the book info" , response = book.class)
+
+@ApiParam(value = "the id to pass")   --> just put this before path variable and it will get documentation 
+
+
+************** Description for Models ****************************************
+
+@ApiModel(description = "this is book model")
+
+@ApiModelProperty(notes = "this ID is primary key of book model")
