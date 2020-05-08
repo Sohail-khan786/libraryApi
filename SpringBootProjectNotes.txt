@@ -141,3 +141,20 @@ when u want to create a field and not let it update
     private Date createdAt;
 
 ************************************************
+
+two important packages for  http input request processing and out passing 
+
+DTO  -> data transfer object --> tranfer this data to database
+
+DAO  -> data access object  --> use this object to send appropriate response to incoming request
+
+
+**********************************************************
+
+extending JPA queries to get user defined queries
+
+https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html
+
+in and Not in clause in JPA
+
+https://javadeveloperzone.com/spring/spring-jpa-query-in-clause-example/
