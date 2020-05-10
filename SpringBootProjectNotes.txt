@@ -142,7 +142,9 @@ when u want to create a field and not let it update
 
 ************************************************
 
-two important packages for  http input request processing and out passing 
+two important packages/concepts  for  http input request processing and out passing 
+
+both are mostly created as interfaces
 
 DTO  -> data transfer object --> tranfer this data to database
 
