@@ -72,9 +72,11 @@ Hacks :
 
 IMP 4 Classes for Every model: enity / model , controller , service , repository
 
+@RestController
 controller  class-->> for api/url requests mappings
                  --> --> has service class instance to use its method
 
+@Service
 service class-->>connect to database and  to provide data to controllers
              --> has CrudRepository instance to use its method
 
@@ -83,7 +85,7 @@ normal class -->> entity Class -->> to define object of that resource
              -->> @Id - shows primary key
              -->> has all properties , getters , setters , zero arguement constructors and all arguement constructors
              
-
+@Repository
 Repository or CrudRepository Interface -->> to use spring crud operations directly
 
 
