@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "9e66a259-806f-4aaa-af02-ec63ec777aa8",
+		"name": "Library Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9002/addBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"C and DS\",\n\t\"price\" : \"200\",\n\t\"authorId\": 1\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9002/api/addBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"addBook"
+					]
+				},
+				"description": "Add a Book"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9002/getAllBooks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "sadasda",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dsfsdd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9002/api/getAllBooks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"getAllBooks"
+					]
+				},
+				"description": "Get list of Books"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9002/deleteBook/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9002/api/deleteBook/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"deleteBook",
+						"6"
+					]
+				},
+				"description": "Delete a book using its ID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9002/updateBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"bookId\": 6,\r\n        \"name\": \"Test book 3 Remastered\",\r\n        \"author\": \"Heena\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9002/api/updateBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"updateBook"
+					]
+				},
+				"description": "Update book using book object"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9002/getBookById/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9002/api/getBookById/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"getBookById",
+						"2"
+					]
+				},
+				"description": "Get a specific book using its ID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9002/addAuthor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"Heena\",\n\t\"city\" : \"Pune\",\n\t\"country\" : \"India\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9002/api/addAuthor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"addAuthor"
+					]
+				},
+				"description": "Add Author to Author Table"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9002/deleteAuthor/1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9002/api/deleteAuthor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"deleteAuthor",
+						"1"
+					]
+				},
+				"description": "Delete a author using author ID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9002/updateAuthor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"authorId\" : 1,\n\t\"name\" : \"sohail update\",\n\t\"city\" : \"Dahanu\",\n\t\"country\" : \"India\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9002/api/updateAuthor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"updateAuthor"
+					]
+				},
+				"description": "Update Author information"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9002/getAllAuthors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9002/api/getAllAuthors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"getAllAuthors"
+					]
+				},
+				"description": "Get all authors"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9002/getAllBooksByAuthorId/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9002/api/getAllBooksByAuthorId/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"api",
+						"getAllBooksByAuthorId",
+						"1"
+					]
+				},
+				"description": "Get All books by a particular Author using author Id"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
