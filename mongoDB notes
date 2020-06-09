@@ -34,6 +34,11 @@ Good References :
     converts that BSON string to ByteArray and encodes it using base64 and returns base64 encoded String
 
 
+Postman Request : to upload multipart file
+   1. use formData for request body and add key value pairs , select file when there is need and thats how u make request in postman
+   https://www.youtube.com/watch?v=3vqvZmP28KE&t=176s
+
+
 
 use below function to download base64 file in angular : frontend
 
