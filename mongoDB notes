@@ -1,1 +1,54 @@
 Lets Start This JSON journey
+
+Mongo DB command cheat sheet : first start command is just "mongo"
+    https://gist.github.com/bradtraversy/f407d642bdc3b31681bc7e56d95485b6
+
+
+
+*************************** Project 1 : MongoDb with spring boot -> API for recipe project ******************************************
+
+@Document(Collection = "<collectionName>") annotation on entity class
+
+the repository class extends mongoRepository  and not jpaRepository
+
+mongoDB application properties file are different
+
+***********************************************************************************************************************************
+
+
+
+
+
+
+
+*************************** Project 2 : FileSystem with spring boot ******************************************
+
+Two Maine Parts of this project are :
+    1. Directory Structure
+    2. File upload and mapping it to directory structure
+
+Good References : 
+    https://www.baeldung.com/spring-boot-mongodb-upload-file 
+
+    followed above article for file upload , it uploads and stores file in BSON format and while returning to user 
+    converts that BSON string to ByteArray and encodes it using base64 and returns base64 encoded String
+
+
+
+use below function to download base64 file in angular : frontend
+
+    showPdf() {
+        
+        //Paste the base64 file string in place and file will be downloaded
+        //you can also change name of file from sample to anything you like
+        const linkSource = 'data:application/jpg;base64,' + "Base64 file string paste here";
+        const downloadLink = document.createElement("a");
+        const fileName = "sample.pdf";
+
+        downloadLink.href = linkSource;
+        downloadLink.download = fileName;
+        downloadLink.click();
+    }
+
+
+***********************************************************************************************************************************
